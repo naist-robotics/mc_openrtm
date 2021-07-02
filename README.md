@@ -10,6 +10,10 @@ This package is an OpenRTM interface for mc\_rtc
 - [hrpsys-base](https://github.com/fkanehiro/hrpsys-base)
 - [mc\_rtc](https://gite.lirmm.fr/multi-contact/mc_rtc)
 
+- [hrp4j_description](https://gite.lirmm.fr/mc-hrp4/hrp4j_description)
+ --> model of hrp4 from gitlab
+
+
 This package comes with a sample choreonoid project using the JVRC1 robot model. To install this project you need to have [Choreonoid](https://github.com/s-nakaoka/choreonoid) installed as well.
 
 ## Usage
@@ -18,6 +22,7 @@ Run the `sim_mc.cnoid` project for JVRC, for example:
 
 ```bash
 $ cd /usr/share/hrpsys/samples/JVRC1
+$ ./clear-omninames.sh
 $ choreonoid sim_mc.cnoid
 ```
 
@@ -28,6 +33,17 @@ Other simulation files provided by default:
 - `sim_mc_fixed.cnoid`: JVRC1 robot with a fixed base and no floor.
 - `sim_mc_wall.cnoid`: JVRC1 robot in front of a vertical wall. See [the admittance sample tutorial](https://jrl-umi3218.github.io/mc_rtc/tutorials/samples/sample-admittance.html) for example usage.
 - `sim_mc_comanoid_staircase.cnoid`: JVRC1 robot in front of a staircase with steps of (height 18.5cm, length: 24cm). See the [lipm_walking_controller](https://github.com/jrl-umi3218/lipm_walking_controller) for a stair climbing controller using this project.
+
+
+
+Run the `sim_mc.cnoid` project for JVRC, for example:
+
+```bash
+$ cd /usr/share/hrpsys/samples/JVRC1
+$ choreonoid sim_mc.cnoid
+```
+
+
 
 ## Making a new project
 
