@@ -1,69 +1,69 @@
-items:
+items: 
   id: 0
   name: "Root"
   plugin: Base
   class: RootItem
-  children:
-    -
+  children: 
+    - 
       id: 1
       name: "ModelLoader"
       plugin: Base
       class: ExtCommandItem
-      data:
+      data: 
         command: openhrp-model-loader
         executeOnLoading: true
         waitingTimeAfterStarted: 0.1
-    -
+    - 
       id: 2
       name: "World"
       plugin: Body
       class: WorldItem
-      data:
+      data: 
         collisionDetection: false
         collisionDetector: AISTCollisionDetector
         materialTableFile: "${SHARE}/default/materials.yaml"
-      children:
-        -
+      children: 
+        - 
           id: 3
           name: "JVRC1"
           plugin: Body
           class: BodyItem
-          data:
-            modelFile: "/usr/share/OpenHRP-3.1/robot/JVRC1/main.wrl"
+          data: 
+            modelFile: "${PROGRAM_TOP}/share/OpenHRP-3.1/robot/JVRC1/main.wrl"
             currentBaseLink: "PELVIS"
             rootPosition: [ -0.0164712421, -0.00366884734, 0.823007651 ]
-            rootAttitude: [
-              0.999520541, 0.000990316288, -0.030946845,
-              -0.00104419639, 0.999997967, -0.00172494057,
+            rootAttitude: [ 
+              0.999520541, 0.000990316288, -0.030946845, 
+              -0.00104419639, 0.999997967, -0.00172494057, 
               0.0309450738, 0.00175642811, 0.999519543 ]
-            jointPositions: [
-              -0.379810, -0.008074, -0.000838,  0.742713,  0.002117, -0.331916, -0.377849,  0.022870, -0.000819,  0.736924,
-              -0.021918, -0.328003,  0.000273,  0.132712,  0.002899, -0.000007,  0.000172,  0.000190, -0.046211, -0.158306,
-               0.002202, -0.510719,  0.000086,  0.001314,  0.000224,  0.002210,  0.003101, -0.002201, -0.002804, -0.002201,
-              -0.002804, -0.046428,  0.159369, -0.001891, -0.511009, -0.000085, -0.001148, -0.000219, -0.002217, -0.003024,
+            jointPositions: [ 
+              -0.379810, -0.008074, -0.000838,  0.742713,  0.002117, -0.331916, -0.377849,  0.022870, -0.000819,  0.736924, 
+              -0.021918, -0.328003,  0.000273,  0.132712,  0.002899, -0.000007,  0.000172,  0.000190, -0.046211, -0.158306, 
+               0.002202, -0.510719,  0.000086,  0.001314,  0.000224,  0.002210,  0.003101, -0.002201, -0.002804, -0.002201, 
+              -0.002804, -0.046428,  0.159369, -0.001891, -0.511009, -0.000085, -0.001148, -0.000219, -0.002217, -0.003024, 
                0.002064,  0.002707,  0.002064,  0.002707 ]
             initialRootPosition: [ -0.0164712421, -0.00366884734, 0.823007651 ]
-            initialRootAttitude: [
-              0.999520541, 0.000990316288, -0.030946845,
-              -0.00104419639, 0.999997967, -0.00172494057,
+            initialRootAttitude: [ 
+              0.999520541, 0.000990316287, -0.030946845, 
+              -0.00104419639, 0.999997967, -0.00172494057, 
               0.0309450738, 0.00175642811, 0.999519543 ]
-            initialJointPositions: [
-              -0.379810, -0.008074, -0.000838,  0.742713,  0.002117, -0.331916, -0.377849,  0.022870, -0.000819,  0.736924,
-              -0.021918, -0.328003,  0.000273,  0.132712,  0.002899, -0.000007,  0.000172,  0.000190, -0.046211, -0.158306,
-               0.002202, -0.510719,  0.000086,  0.001314,  0.000224,  0.002210,  0.003101, -0.002201, -0.002804, -0.002201,
-              -0.002804, -0.046428,  0.159369, -0.001891, -0.511009, -0.000085, -0.001148, -0.000219, -0.002217, -0.003024,
+            initialJointPositions: [ 
+              -0.379810, -0.008074, -0.000838,  0.742713,  0.002117, -0.331916, -0.377849,  0.022870, -0.000819,  0.736924, 
+              -0.021918, -0.328003,  0.000273,  0.132712,  0.002899, -0.000007,  0.000172,  0.000190, -0.046211, -0.158306, 
+               0.002202, -0.510719,  0.000086,  0.001314,  0.000224,  0.002210,  0.003101, -0.002201, -0.002804, -0.002201, 
+              -0.002804, -0.046428,  0.159369, -0.001891, -0.511009, -0.000085, -0.001148, -0.000219, -0.002217, -0.003024, 
                0.002064,  0.002707,  0.002064,  0.002707 ]
             zmp: [ 0, 0, 0 ]
             collisionDetection: true
             selfCollisionDetection: false
             isEditable: true
-          children:
-            -
+          children: 
+            - 
               id: 4
               name: "BodyRTC"
               plugin: OpenRTM
               class: BodyRTCItem
-              data:
+              data: 
                 isNoDelayMode: true
                 controllerOptions: ""
                 moduleName: "PDcontroller"
@@ -73,67 +73,92 @@ items:
                 instanceName: "JVRC1Controller(Robot)0"
                 bodyPeriodicRate: 0.005
                 baseDirectory: "RTC directory"
-            -
+            - 
               id: 5
               name: "SensorVisualizer"
               plugin: Body
               class: SensorVisualizer
-              data:
-                subItems:
-                  -
+              data: 
+                subItems: 
+                  - 
                     class: ForceSensorVisualizer
                     name: ForceSensor
                     visualRatio: 0.002
-        -
+                  - 
+                    class: PointCloudVisualizer
+                    name: dcamera
+                    renderingMode: Point
+                    pointSize: 0
+                    voxelSize: 0.01
+                    isEditable: false
+                  - 
+                    class: RangeSensorVisualizer
+                    name: ranger
+                    renderingMode: Point
+                    pointSize: 0
+                    voxelSize: 0.01
+                    isEditable: false
+                  - 
+                    class: CameraImageVisualizer
+                    name: rcamera
+                  - 
+                    class: CameraImageVisualizer
+                    name: lcamera
+                  - 
+                    class: CameraImageVisualizer
+                    name: dcamera_Image
+        - 
           id: 6
           name: "longfloor"
           plugin: Body
           class: BodyItem
-          data:
-            modelFile: "/usr/share/OpenHRP-3.1/sample/model/longfloor.wrl"
+          data: 
+            modelFile: "${PROGRAM_TOP}/share/OpenHRP-3.1/sample/model/longfloor.wrl"
             currentBaseLink: "WAIST"
             rootPosition: [ 0, 0, -0.1 ]
-            rootAttitude: [
-              1, 0, 0,
-              0, 1, 0,
+            rootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
               0, 0, 1 ]
             jointPositions: [  ]
             initialRootPosition: [ 0, 0, -0.1 ]
-            initialRootAttitude: [
-              1, 0, 0,
-              0, 1, 0,
+            initialRootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
               0, 0, 1 ]
             zmp: [ 0, 0, 0 ]
             collisionDetection: true
             selfCollisionDetection: false
             isEditable: true
-        -
+        - 
           id: 7
           name: "Wall"
           plugin: Body
           class: BodyItem
-          data:
-            modelFile: "/usr/share/hrpsys/samples/environments/sim_mc_wall.wrl"
+          data: 
+            modelFile: "${PROGRAM_TOP}/share/hrpsys/samples/environments/sim_mc_wall.wrl"
             currentBaseLink: ""
-            rootPosition: [ 0.55, 0.0, 0.0 ]
-            rootAttitude: [
-              1, 0, 0,
-              0, 1, 0,
+            rootPosition: [ 0.55, 0, 0 ]
+            rootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
               0, 0, 1 ]
-            initialRootPosition: [ 0.55, 0.0, 0.0 ]
-            initialRootAttitude: [
-              1, 0, 0,
-              0, 1, 0,
+            jointPositions: [  ]
+            initialRootPosition: [ 0.55, 0, 0 ]
+            initialRootAttitude: [ 
+              1, 0, 0, 
+              0, 1, 0, 
               0, 0, 1 ]
+            zmp: [ 0, 0, 0 ]
             collisionDetection: true
             selfCollisionDetection: false
             isEditable: true
-        -
+        - 
           id: 8
           name: "AISTSimulator"
           plugin: Body
           class: AISTSimulatorItem
-          data:
+          data: 
             realtimeSync: true
             recording: "full"
             timeRangeMode: "Unlimited"
@@ -157,41 +182,42 @@ items:
             kinematicWalking: false
             2Dmode: false
             oldAccelSensorMode: false
-        -
+        - 
           id: 9
           name: "sim_mc.py"
           plugin: PythonSimScript
           class: PythonSimScriptItem
-          data:
+          data: 
             timing: After init.
             delay: 0
             simulationOnly: true
             backgroundExecution: true
             file: "${PROJECT_DIR}/sim_mc.py"
-views:
-  -
+views: 
+  - 
     id: 0
     plugin: Base
     class: ItemPropertyView
-  -
+  - 
     id: 1
     plugin: Base
     class: ItemTreeView
-    state:
+    mounted: true
+    state: 
       selected: [ [ 5, "ForceSensor" ], 7 ]
       checked: [ 3, 4, [ 5, "ForceSensor" ], 6, 7, 9 ]
       expanded: [ 2, 3, 4, 5, 7 ]
-  -
+  - 
     id: 2
     plugin: Base
     class: MessageView
     mounted: true
-  -
+  - 
     id: 3
     name: "Multi SE3 Seq"
     plugin: Base
     class: MultiSE3SeqGraphView
-    state:
+    state: 
       mode: view
       editMode: freeLine
       original: true
@@ -211,12 +237,12 @@ views:
       lower: -10
       upper: 10
       visibleElements: [ 0, 1, 2 ]
-  -
+  - 
     id: 4
     name: "Multi Value Seq"
     plugin: Base
     class: MultiValueSeqGraphView
-    state:
+    state: 
       mode: view
       editMode: freeLine
       original: true
@@ -235,12 +261,12 @@ views:
       scrollMode: continuous
       lower: -10
       upper: 10
-  -
+  - 
     id: 5
     plugin: Base
     class: SceneView
     mounted: true
-    state:
+    state: 
       editMode: false
       viewpointControlMode: thirdPerson
       collisionLines: false
@@ -273,17 +299,17 @@ views:
       enableNewDisplayListDoubleRendering: false
       useBufferForPicking: true
       upsideDown: false
-      cameras:
-        -
+      cameras: 
+        - 
           camera: [ System, Perspective ]
           isCurrent: true
           fieldOfView: 0.6978
           near: 0.01
           far: 10000
-          eye: [ -1.20231813, -2.7105906, 2.29043851 ]
-          direction: [ 0.533316651, 0.745780686, -0.399229905 ]
-          up: [ 0.232225292, 0.32473979, 0.916850851 ]
-        -
+          eye: [ -0.776751452, -3.2388317, 2.40730696 ]
+          direction: [ 0.444229975, 0.792694954, -0.417485856 ]
+          up: [ 0.204097188, 0.364196071, 0.908683421 ]
+        - 
           camera: [ System, Orthographic ]
           orthoHeight: 20
           near: 0.01
@@ -293,37 +319,38 @@ views:
       xzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
       yzgridColor: [ 0.899999976, 0.899999976, 0.899999976, 1 ]
       dedicatedItemTreeViewChecks: false
-  -
+  - 
     id: 6
     name: "Task"
     plugin: Base
     class: TaskView
-    state:
+    state: 
       layoutMode: horizontal
       isAutoMode: false
-  -
+  - 
     id: 7
     name: "Text Editor"
     plugin: Base
     class: TextEditView
-  -
+  - 
     id: 8
     plugin: Body
     class: BodyLinkView
-    state:
+    state: 
       showRotationMatrix: false
-  -
+  - 
     id: 9
     name: "Body State"
     plugin: Body
     class: BodyStateView
     mounted: true
-  -
+  - 
     id: 10
     name: "Joint Trajectories"
     plugin: Body
     class: JointGraphView
-    state:
+    mounted: true
+    state: 
       mode: view
       editMode: freeLine
       original: true
@@ -342,11 +369,11 @@ views:
       scrollMode: continuous
       lower: -10
       upper: 10
-  -
+  - 
     id: 11
     plugin: Body
     class: JointSliderView
-    state:
+    state: 
       showAllJoints: true
       jointId: true
       name: true
@@ -356,45 +383,71 @@ views:
       dial: false
       labelOnLeft: true
       currentBodyItem: 3
-  -
+  - 
     id: 12
     name: "Joint State"
     plugin: Body
     class: JointStateView
     mounted: true
-  -
+  - 
     id: 13
+    name: "Link Trajectories"
+    plugin: Body
+    class: LinkGraphView
+    mounted: true
+    state: 
+      mode: view
+      editMode: freeLine
+      original: true
+      velocity: false
+      acceleration: false
+      limits: true
+      grid: true
+      gridWidth: 0.2
+      gridHeight: 0.2
+      lineWidth: 1
+      rulers: false
+      sync: true
+      controlPointStep: 1
+      controlPointOffset: 0
+      controlPointHeighlight: false
+      scrollMode: continuous
+      lower: -10
+      upper: 10
+      visibleElements: [ 0, 1, 2 ]
+  - 
+    id: 14
     plugin: Body
     class: LinkSelectionView
-    state:
+    state: 
       listingMode: "Link List"
       currentBodyItem: 3
-      bodyItems:
-        -
+      bodyItems: 
+        - 
           id: 3
           selectedLinks: [ 0 ]
-  -
-    id: 14
+  - 
+    id: 15
     name: "Nameserver"
     plugin: Corba
     class: NameServerView
-  -
-    id: 15
+  - 
+    id: 16
     plugin: OpenRTM
     class: RTSNameServerView
-    state:
-      NameServers:
-        -
+    state: 
+      NameServers: 
+        - 
           isDefaultNameServer: false
           host: "localhost"
           port: 2809
-  -
-    id: 16
+  - 
+    id: 17
     plugin: Python
     class: PythonConsoleView
     mounted: true
-toolbars:
-  "TimeBar":
+toolbars: 
+  "TimeBar": 
     minTime: 0
     maxTime: 42
     frameRate: 1000
@@ -404,7 +457,7 @@ toolbars:
     speedScale: 1
     syncToOngoingUpdates: true
     autoExpansion: true
-  "KinematicsBar":
+  "KinematicsBar": 
     mode: IK
     enablePositionDragger: true
     penetrationBlock: true
@@ -412,11 +465,11 @@ toolbars:
     snapDistance: 0.025
     penetrationBlockDepth: 0.0005
     lazyCollisionDetectionMode: true
-  "BodyBar":
-    current: 3
-  "LeggedBodyBar":
+  "BodyBar": 
+    current: 7
+  "LeggedBodyBar": 
     stanceWidth: 0.15
-  "BodyMotionGenerationBar":
+  "BodyMotionGenerationBar": 
     autoGenerationForNewBody: true
     balancer: false
     autoGeneration: false
@@ -449,23 +502,28 @@ toolbars:
     waistHeightRelaxation: false
     gravity: 9.8
     dynamicsTimeRatio: 1
-Body:
-  "BodyMotionEngine":
+Body: 
+  "BodyMotionEngine": 
     updateJointVelocities: false
-  "EditableSceneBody":
-    editableSceneBodies:
-      -
+  "EditableSceneBody": 
+    editableSceneBodies: 
+      - 
         bodyItem: 3
         showCenterOfMass: false
         showPpcom: false
         showZmp: false
-      -
+      - 
         bodyItem: 6
         showCenterOfMass: false
         showPpcom: false
         showZmp: false
+      - 
+        bodyItem: 7
+        showCenterOfMass: false
+        showPpcom: false
+        showZmp: false
     staticModelEditing: false
-  "KinematicFaultChecker":
+  "KinematicFaultChecker": 
     checkJointPositions: true
     angleMargin: 0
     translationMargin: 0
@@ -474,45 +532,54 @@ Body:
     targetJoints: all
     checkSelfCollisions: true
     onlyTimeBarRange: false
-  "SplineFilterDialog":
+  "SplineFilterDialog": 
     isInputFrameRateSpecified: false
     inputFrameRate: 200
     isOutputFrameRateSpecified: false
     outputFrameRate: 200
-OpenRTM:
+OpenRTM: 
   "deleteUnmanagedRTCsOnStartingSimulation": true
-Python:
-  "moduleSearchPath":
+Python: 
+  "moduleSearchPath": 
     - ${PROGRAM_TOP}/lib/python2.7/dist-packages/hrpsys
-viewAreas:
-  -
+viewAreas: 
+  - 
     type: embedded
     tabs: true
-    contents:
+    contents: 
       type: splitter
       orientation: vertical
-      sizes: [ 767, 203 ]
-      children:
-        -
+      sizes: [ 673, 270 ]
+      children: 
+        - 
           type: splitter
           orientation: horizontal
-          sizes: [ 1390, 526 ]
-          children:
-            -
+          sizes: [ 1216, 460 ]
+          children: 
+            - 
               type: pane
               views: [ 5 ]
               current: 5
-            -
-              type: pane
-              views: [ 12, 9 ]
-              current: 12
-        -
+            - 
+              type: splitter
+              orientation: vertical
+              sizes: [ 335, 334 ]
+              children: 
+                - 
+                  type: pane
+                  views: [ 1 ]
+                  current: 1
+                - 
+                  type: pane
+                  views: [ 12, 9 ]
+                  current: 12
+        - 
           type: pane
-          views: [ 2, 16 ]
-          current: 2
-layoutOfToolBars:
-  rows:
-    -
+          views: [ 2, 17, 13, 10 ]
+          current: 13
+layoutOfToolBars: 
+  rows: 
+    - 
       - { name: "FileBar", x: 0, priority: 2 }
       - { name: "SimulationBar", x: 0, priority: 1 }
       - { name: "TimeBar", x: 47, priority: 0 }
